@@ -17,4 +17,6 @@ public class Disease {
     public String getSymptoms() {
         return Symptoms;
     }
+
+
 }

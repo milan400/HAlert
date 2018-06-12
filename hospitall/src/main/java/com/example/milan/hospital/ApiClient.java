@@ -8,9 +8,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient
 {
-    //public static final String BASE_URL = "http://10.0.3.2/loginapp/";
+    public static final String BASE_URL = "http://10.0.2.2/loginapp/";
 
-    public static final String BASE_URL = "https://nepalsofts.000webhostapp.com/";
+    //public static final String BASE_URL = "https://nepalsofts.000webhostapp.com/";
+
 
     public static Retrofit retrofit = null;
 

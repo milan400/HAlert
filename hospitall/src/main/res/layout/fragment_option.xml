@@ -1,43 +1,325 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OptionFragment">
+    tools:context=".OptionFragment"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:gravity="center"
+    android:background="@color/cardview_light_background"
+    android:theme="@android:style/Theme.Light.NoTitleBar"
+    >
 
     <!-- TODO: Update blank fragment layout -->
 
-    <Button
-        android:id="@+id/doc_inform"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="74dp"
-        android:text="Doctor information" />
 
-    <Button
-        android:id="@+id/test_gnd"
+    <LinearLayout
+        android:clipToPadding="false"
+        android:gravity="center"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="179dp"
-        android:text="Testing Ground" />
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/bn_chatapp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Chat" />
+        <android.support.v7.widget.CardView
+            android:id="@+id/about"
+            android:foreground="?actionBarItemBackground"
+            android:clickable="true"
+            android:layout_width="140dp"
+            android:layout_height="120dp"
+            android:layout_margin="10dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/circlebackgroundpurple"
+                    android:src="@drawable/ic_data_usage_black_24dp"
+                    android:padding="10dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:text="Analysis"
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/lightgray"
+                    />
+                <TextView
+                    android:textSize="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Report generation using Data Mining"
+                    android:padding="5dp"
+                    android:textColor="@android:color/darker_gray"
 
-    <Button
-        android:id="@+id/bn_logout"
+                    />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/doc_info"
+            android:foreground="?actionBarItemBackground"
+            android:clickable="true"
+            android:layout_width="140dp"
+            android:layout_height="120dp"
+            android:layout_margin="10dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/circlebackroundpink"
+                    android:src="@drawable/ic_info_black_24dp"
+                    android:padding="10dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:text="Survey"
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/lightgray"
+                    />
+                <TextView
+                    android:textSize="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Help us to create healthy Nepal"
+                    android:padding="5dp"
+                    android:textColor="@android:color/darker_gray"
+
+                    />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+    <LinearLayout
+        android:clipToPadding="false"
+        android:gravity="center"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="179dp"
-        android:text="Logout" />
-</RelativeLayout>
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/disease"
+            android:foreground="?actionBarItemBackground"
+            android:clickable="true"
+            android:layout_width="140dp"
+            android:layout_height="120dp"
+            android:layout_margin="10dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/circlebackgroundblue"
+                    android:src="@drawable/ic_airline_seat_individual_suite_black_24dp"
+                    android:padding="10dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:text="Disease"
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/lightgray"
+                    />
+                <TextView
+                    android:textSize="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Symptoms and Precaution"
+                    android:padding="5dp"
+                    android:textColor="@android:color/darker_gray"
+
+                    />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/chat"
+            android:foreground="?actionBarItemBackground"
+            android:clickable="true"
+            android:layout_width="140dp"
+            android:layout_height="120dp"
+            android:layout_margin="10dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/circlebackgroundyellow"
+                    android:src="@drawable/ic_chat_black_24dp"
+                    android:padding="10dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:text="Chat"
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/lightgray"
+                    />
+                <TextView
+                    android:textSize="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Chat with doctor in RealTime"
+                    android:padding="5dp"
+                    android:textColor="@android:color/darker_gray"
+                    />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+    <LinearLayout
+        android:clipToPadding="false"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/google"
+            android:foreground="?actionBarItemBackground"
+            android:clickable="true"
+            android:layout_width="140dp"
+            android:layout_height="120dp"
+            android:layout_margin="10dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/circlebackgroundgreen"
+                    android:src="@drawable/ic_google"
+                    android:padding="10dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:text="Search"
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/lightgray"
+                    />
+                <TextView
+                    android:textSize="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Google your Disease"
+                    android:padding="5dp"
+                    android:textColor="@android:color/darker_gray"
+
+                    />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/logout"
+            android:foreground="?actionBarItemBackground"
+            android:clickable="true"
+            android:layout_width="140dp"
+            android:layout_height="120dp"
+            android:layout_margin="10dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/circlebackgroundred"
+                    android:src="@drawable/ic_power_settings_new_black_24dp"
+                    android:padding="10dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:text="Logout"
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/lightgray"
+                    />
+                <TextView
+                    android:textSize="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Is the hardest button to click"
+                    android:padding="5dp"
+                    android:textColor="@android:color/darker_gray"
+                    />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+</LinearLayout>
+
+

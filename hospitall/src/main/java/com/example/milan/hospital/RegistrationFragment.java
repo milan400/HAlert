@@ -1,6 +1,7 @@
 package com.example.milan.hospital;
 
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -25,6 +26,8 @@ public class RegistrationFragment extends Fragment {
 
     private EditText Name,UserName,UserPassword;
     private Button BnRegister;
+    private ProgressDialog mprogress;
+
 
 
 
@@ -43,6 +46,8 @@ public class RegistrationFragment extends Fragment {
         UserName = view.findViewById(R.id.txt_user_name);
         UserPassword = view.findViewById(R.id.txt_password);
         BnRegister = view.findViewById(R.id.bn_register);
+        mprogress = new ProgressDialog(getContext());
+
 
         BnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,18 +66,24 @@ public class RegistrationFragment extends Fragment {
         String password = UserPassword.getText().toString();
 
         Call<User> call = MainActivity.apiInterface.performRegistration(name,username,password);
-
+        mprogress.setMessage("Signing Up...");
+        mprogress.show();
 
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
 
+                mprogress.dismiss();
+
                 if(response.body().getResponse().equals("ok"))
+
                 {
+
                     MainActivity.prefConfig.displayToast("Registration success...");
                 }
                 else if(response.body().getResponse().equals("exist"))
                 {
+
                     MainActivity.prefConfig.displayToast("User already exist....");
                 }
                 else if(response.body().getResponse().equals("error"))
@@ -83,6 +94,8 @@ public class RegistrationFragment extends Fragment {
 
             @Override
             public void onFailure(Call<User> call, Throwable t) {
+                mprogress.dismiss();
+                MainActivity.prefConfig.displayToast("fail...");
 
             }
         });

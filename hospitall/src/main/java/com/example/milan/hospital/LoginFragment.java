@@ -2,13 +2,13 @@ package com.example.milan.hospital;
 
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ActionMenuView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -25,7 +25,9 @@ public class LoginFragment extends Fragment {
 
     private TextView RegText;
     private EditText UserName,UserPassword;
-    private Button LoginBn;;
+    private Button LoginBn;
+    private ProgressDialog mprogress;
+
 
     OnLoginFormActivityListener loginFormActivityListener;
 
@@ -50,6 +52,7 @@ public class LoginFragment extends Fragment {
         UserName = view.findViewById(R.id.user_name);
         UserPassword = view.findViewById(R.id.user_pass);
         LoginBn = view.findViewById(R.id.login_bn);
+        mprogress = new ProgressDialog(getContext());
 
         LoginBn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,10 +83,16 @@ public class LoginFragment extends Fragment {
         String username = UserName.getText().toString();
         String password = UserPassword.getText().toString();
 
+        mprogress.setMessage("Checking Login..");
+        mprogress.show();
+
         Call<User> call = MainActivity.apiInterface.performUserLogin(username,password);
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
+
+                mprogress.dismiss();
+
                 if(response.body().getResponse().equals("ok"))
                 {
                     MainActivity.prefConfig.writeLoginStatus(true);
@@ -91,12 +100,14 @@ public class LoginFragment extends Fragment {
                 }
                 else if(response.body().getResponse().equals("failed"))
                 {
+
                     MainActivity.prefConfig.displayToast("Login Failed...Please try again...");
                 }
             }
 
             @Override
             public void onFailure(Call<User> call, Throwable t) {
+                mprogress.dismiss();
                 MainActivity.prefConfig.displayToast("fail...");
             }
         });

@@ -2,12 +2,14 @@
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/gradient"
-    >
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/lightblue"
+    app:cardBackgroundColor="@color/lightblue">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/check_symp"
-        android:background="@drawable/gradient"
+        android:textColor="@color/lightgray"
+        android:textStyle="italic"
         />
 </android.support.v7.widget.CardView>

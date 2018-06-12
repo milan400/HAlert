@@ -16,8 +16,29 @@ public interface ApiInterface
     @GET("login.php")
     Call<User> performUserLogin(@Query("user_name") String UserName,@Query("user_password") String UserPassword);
 
-    @POST("getsymptoms.php")
-    Call<List<Disease>>  getSymptoms();
+    @GET("getsymptoms.php")
+    Call<List<Disease>>  getSymptoms(@Query("disesasename") String diseasename);
+
+    @POST("getdiseasename.php")
+    Call<List<Name>> getDiseasename();
+
+    @POST("getzonename.php")
+    Call<List<Name>> getZonename();
+
+    @GET("getdistrict.php")
+    Call<List<Name>> getDistrictname(@Query("zonename") String zonename);
+
+
+    @GET("registerfrom.php")
+    Call<FormData> performformregister(@Query("zone") String zone,@Query("district") String district,@Query("disease") String disease);
+
+
+    @GET("getgraphname.php")
+    Call<List<Name>> getgraphname();
+
+    @GET("getgraph.php")
+    Call<List<GraphModel>> getgraph(@Query("imagename") String imagename);
+
 }
 
 

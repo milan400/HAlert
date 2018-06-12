@@ -5,13 +5,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    android:background="@drawable/gradient"
+    android:background="@drawable/backg"
     tools:context=".Welcome">
+
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Diseases:"
+        android:layout_marginBottom="5dp"
+        android:textStyle="italic"
+        android:textSize="18dp"
+        android:textColor="@color/lightgray"
+        />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="49dp"
+        android:prompt="@string/spinner_title"
+        android:background="@drawable/green"
+        />
+
+
     <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/recyclerView"
-        android:scrollbars="vertical"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="105dp"
+        android:background="@color/lightblue"
         android:padding="20dp"
-        ></android.support.v7.widget.RecyclerView>
+        android:scrollbars="vertical" />
 </RelativeLayout>

@@ -6,10 +6,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.Button;
+
+import mehdi.sakout.aboutpage.AboutPage;
 
 
 /**
@@ -17,7 +21,9 @@ import android.widget.Button;
  */
 public class OptionFragment extends Fragment {
 
-    private Button test_gnd,doc_inform,bn_chatapp,bn_logout;
+    private CardView  test_gnd,doc_inform,bn_chatapp,bn_logout,about,google;
+
+
     OnLogoutListener onLogoutListener;
 
     public interface OnLogoutListener
@@ -38,11 +44,21 @@ public class OptionFragment extends Fragment {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_option, container, false);
 
-        test_gnd = view.findViewById(R.id.test_gnd);
-        doc_inform = view.findViewById(R.id.doc_inform);
-        bn_chatapp = view.findViewById(R.id.bn_chatapp);
-        bn_logout = view.findViewById(R.id.bn_logout);
+        about = view.findViewById(R.id.about);
+        test_gnd = view.findViewById(R.id.disease);
+        doc_inform = view.findViewById(R.id.doc_info);
+        bn_chatapp = view.findViewById(R.id.chat);
+        bn_logout = view.findViewById(R.id.logout);
+        google = view.findViewById(R.id.google);
 
+
+        doc_inform.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(),Form.class);
+                startActivity(intent);
+            }
+        });
 
         test_gnd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,6 +80,23 @@ public class OptionFragment extends Fragment {
             public void onClick(View v) {
                 Intent launchFacebookApplication = getActivity().getPackageManager().getLaunchIntentForPackage("com.example.kiran.chatapp");
                 startActivity(launchFacebookApplication);
+            }
+        });
+
+        about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent Aboutpage = new Intent(getContext(), Mining.class);
+                startActivity(Aboutpage);
+            }
+        });
+
+
+        google.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent Google = new Intent(getContext(), com.example.milan.hospital.WebView.class);
+                startActivity(Google);
             }
         });
 

@@ -15,10 +15,23 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Welcome" />
+        <activity android:name=".About" />
+        <activity android:name=".Form" />
+        <activity
+            android:name=".Mining"
+            android:screenOrientation="landscape" />
+        <activity android:name=".splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Welcome"></activity>
+        <activity android:name=".WebView"></activity>
     </application>
 
 </manifest>
